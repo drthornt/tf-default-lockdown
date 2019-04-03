@@ -2,7 +2,7 @@ variable "region" {
  default ="error"
 }
 
-variable "vpc name" {
+variable "vpc_name" {
     default = "Default VPC"
 }
 
