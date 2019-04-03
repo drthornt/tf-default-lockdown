@@ -18,7 +18,7 @@ resource "aws_default_vpc" "default" {
   }
 }
 
-resources "aws_default_security_group" "default_sg" {
+resource "aws_default_security_group" "default_sg" {
   vpc_id = "${aws_vpc.default.id}"
 
   ingress {
