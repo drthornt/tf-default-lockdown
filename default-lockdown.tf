@@ -19,6 +19,7 @@ resource "aws_default_vpc" "default" {
 }
 
 resource "aws_default_security_group" "default_sg" {
+  provider = "aws.${var.region}"
   vpc_id = "${aws_default_vpc.default.id}"
 
   ingress {
