@@ -1,9 +1,9 @@
 variable "region" {
- default ="error"
+  default = "error"
 }
 
 variable "vpc_name" {
-    default = "Default VPC"
+  default = "Default VPC"
 }
 
 provider "aws" {
@@ -13,6 +13,7 @@ provider "aws" {
 
 resource "aws_default_vpc" "default" {
   provider = "aws.${var.region}"
+
   tags = {
     Name = "Default VPC"
   }
@@ -20,9 +21,9 @@ resource "aws_default_vpc" "default" {
 
 resource "aws_default_security_group" "default_sg" {
   provider = "aws.${var.region}"
-  vpc_id = "${aws_default_vpc.default.id}"
+  vpc_id   = "${aws_default_vpc.default.id}"
 }
 
 output default_vpc_id {
- value = "aws_default_vpc.default.id"
+  value = "aws_default_vpc.default.id"
 }
